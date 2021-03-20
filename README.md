@@ -5,18 +5,28 @@ Make sure that you create a virtual environment for your Python code (everything
 
 The name of this project is `demo-app` so I named the virtual environment `demo-app-venv`. In order to run the virtual environment you will run this command from the `server` directory:
 ```
-. demo-app-venv/bin/activate
+source demo-app-venv/bin/activate
 ```
 
 # Setup Instructions
-1. Clone this Repo
-2. Make sure your virtual environment is running: `cd` into the `/server` directory then run `. demo-app-venv/bin/activate`. NOTE: To deactivate the Python virtual environment, `cd` into the `server` directory and enter `deactivate`.
-3. Install Python dependencies inside your virtualenv:
-You can create a `requirements.txt` file inside the `server` directory that contains a `requirements.txt` file. If you use a `requirements.txt` file for dependencies, then `cd` into your `server` directory and run use `pip3` to install the dependencies in python3:
-```
-pip3 install -r requirements.txt
-```
-4. Install Node dependencies for the frontend: `cd` into the `client` directory and run `npm install`.
+1. Create a folder on your computer where you want to store your project code.
+2. Client-side Setup:
+    * From a terminal window, `cd` into your project folder.
+    * Go to [vitejs.dev](https://vitejs.dev/) and click on "Get Started". Follow the instructions to "Scaffolding Your First Vite Project". 
+    * Give your Vite project the name `client` then select the Svelte template. This will create your Vite/Svelte project inside a directory named `client`.
+3. Server-side Setup:
+    * Create another folder inside your project folder called `server`.
+    * Follow the instructions above to create a virtual environment.
+    * Make sure your virtual environment is running: `cd` into the `server` directory then run `source demo-app-venv/bin/activate`. 
+        * Make sure to install all Python packages for this project while the virtual environment is running.
+        * To deactivate the Python virtual environment, `cd` into the `server` directory and enter `deactivate`.
+    * Create a `main.py` file inside your `server` directory and copy the code from that same file in this repository into your file.
+
+## Note about dependencies
+If you clone this repo, then you will have to install the dependencies for the client and the server.
+
+* Install Node dependencies for the client: `cd` into the `client` directory and run `npm install`.
+* You should install Python dependencies inside your virtualenv. You can create a `requirements.txt` file inside the `server` directory that contains a `requirements.txt` file. If you use a `requirements.txt` file for dependencies, then `cd` into your `server` directory and use `pip3` to install the dependencies using Python3: `pip3 install -r requirements.txt`
 
 
 # Local Development
@@ -27,9 +37,9 @@ It is important that you run the following commands in this order otherwise the 
 
 
 # Test A Production Version Locally
-* Build the client-side code for production: `cd` into the `client` directory and run `npm run build`. That will create a new `client/dist` directory that contains JavaScript files that the browser can understand. If you used a CSS preprocessor, like Sass, then the build process will also create CSS files that the browser can understand.
+* Build the client-side code for production: `cd` into the `client` directory and run `npm run build`. That will create a new `client/dist` directory that contains bundled and optimized JavaScript, CSS, and image files.
 * Run the Uvicorn server: `cd` into the `server` directory and run `uvicorn main:app`. The server should now be serving up the client side code for the `client/dist` directory. Open a browser and navigate to `localhost:8000`. You should see the app in the browser.
 
 
 # Proxying requests from the frontend to the backend
-The `vite.config.js` file is where the configurations are located for proxying frontend requests to the backend server. The `main.py` file also includes CORS configurations to allow requests from the frontend during development because the frontend will run on a different port during development.
+The `vite.config.js` file is where the configurations are located for proxying frontend requests to the backend server. The `main.py` file also includes CORS configurations to allow requests from the frontend during development because the frontend code will run on a different port during development.
