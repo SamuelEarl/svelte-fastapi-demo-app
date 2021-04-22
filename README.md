@@ -6,7 +6,7 @@ This app shows how to configure a Svelte SPA app. This configuration would come 
 2. Client-side Setup:
     * From a terminal window, `cd` into your project folder.
     * Go to [vitejs.dev](https://vitejs.dev/) and click on "Get Started". Follow the instructions under "Scaffolding Your First Vite Project". 
-    * Give your Vite project the name `client` then select the Svelte template. This will create your Vite/Svelte project inside a directory named `client`.
+    * In your terminal, type `npm init @vitejs/app`. Give your Vite project the name `client` then select the Svelte template. This will create your Vite/Svelte project inside a directory named `client`.
 3. Server-side Setup:
     * Create another folder inside your project folder called `server`.
     * Follow the instructions above to create a virtual environment.
