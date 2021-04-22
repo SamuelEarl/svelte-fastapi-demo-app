@@ -1,4 +1,5 @@
-# Demo App Showing How To Configure Svelte (using Vite) with FastAPI
+# Demo App Showing How To Configure Svelte SPA (using Vite) with FastAPI
+This app shows how to configure a Svelte SPA app. This configuration would come into play, for example, in scenarios where you have a backend that is not written in Node.js and/or you don't need SSR.
 
 # Virtual Environments
 Make sure that you create a virtual environment for your Python code (everything inside of the `server` directory) and have it running while you are developing your app. See this tutorial: [Installing and using virtualenv with Python 3](https://help.dreamhost.com/hc/en-us/articles/115000695551-Installing-and-using-virtualenv-with-Python-3)
