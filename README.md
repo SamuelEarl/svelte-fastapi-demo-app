@@ -1,19 +1,11 @@
 # Demo App Showing How To Configure Svelte SPA (using Vite) with FastAPI
 This app shows how to configure a Svelte SPA app. This configuration would come into play, for example, in scenarios where you have a backend that is not written in Node.js and/or you don't need SSR.
 
-# Virtual Environments
-Make sure that you create a virtual environment for your Python code (everything inside of the `server` directory) and have it running while you are developing your app. See this tutorial: [Installing and using virtualenv with Python 3](https://help.dreamhost.com/hc/en-us/articles/115000695551-Installing-and-using-virtualenv-with-Python-3)
-
-The name of this project is `demo-app` so I named the virtual environment `demo-app-venv`. In order to run the virtual environment you will run this command from the `server` directory:
-```
-source demo-app-venv/bin/activate
-```
-
 # Setup Instructions
 1. Create a folder on your computer where you want to store your project code.
 2. Client-side Setup:
     * From a terminal window, `cd` into your project folder.
-    * Go to [vitejs.dev](https://vitejs.dev/) and click on "Get Started". Follow the instructions to "Scaffolding Your First Vite Project". 
+    * Go to [vitejs.dev](https://vitejs.dev/) and click on "Get Started". Follow the instructions under "Scaffolding Your First Vite Project". 
     * Give your Vite project the name `client` then select the Svelte template. This will create your Vite/Svelte project inside a directory named `client`.
 3. Server-side Setup:
     * Create another folder inside your project folder called `server`.
@@ -29,6 +21,13 @@ If you clone this repo, then you will have to install the dependencies for the c
 * Install Node dependencies for the client: `cd` into the `client` directory and run `npm install`.
 * You should install Python dependencies inside your virtualenv. You can create a `requirements.txt` file inside the `server` directory that contains a `requirements.txt` file. If you use a `requirements.txt` file for dependencies, then `cd` into your `server` directory and use `pip3` to install the dependencies using Python3: `pip3 install -r requirements.txt`
 
+# Virtual Environments
+Make sure that you create a virtual environment for your Python code (everything inside of the `server` directory) and have it running while you are developing your app. See this tutorial: [Installing and using virtualenv with Python 3](https://help.dreamhost.com/hc/en-us/articles/115000695551-Installing-and-using-virtualenv-with-Python-3)
+
+The name of this project is `demo-app` so I named the virtual environment `demo-app-venv`. In order to run the virtual environment you will run this command from the `server` directory:
+```
+source demo-app-venv/bin/activate
+```
 
 # Local Development
 It is important that you run the following commands in this order otherwise the Vite dev server (which is used in the frontend code) will error out if there is no Uvicorn server running on port 8000.
